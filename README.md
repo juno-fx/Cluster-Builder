@@ -9,6 +9,5 @@
 
 ## Dependencies
 
-- [vcluster](https://www.vcluster.com/)
 - [ArgoCD](https://argo-cd.readthedocs.io/en/stable/)
 
