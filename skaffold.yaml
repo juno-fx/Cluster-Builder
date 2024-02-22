@@ -1,0 +1,24 @@
+apiVersion: skaffold/v4beta6
+kind: Config
+metadata:
+  name: avi
+
+build:
+  local:
+    push: false
+  tagPolicy:
+    sha256: {}
+  artifacts:
+    - image: avi
+      docker:
+        dockerfile: Dockerfile
+
+verify:
+  - name: avi
+    timeout: 60
+    container:
+      image: avi
+      name: avi
+    executionMode:
+      kubernetesCluster:
+        jobManifestPath: tests/runner.yaml
