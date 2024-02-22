@@ -21,9 +21,7 @@ jobs:
 
       - name: Build and Push
         shell: bash
-        env:
-          SOURCE_BRANCH: ${{ steps.branch_name.outputs.SOURCE_BRANCH }}
         run: |
-          echo "$SOURCE_BRANCH"
-          docker build . -t aldmbmtl/cluster-builder:$SOURCE_BRANCH
-          docker push aldmbmtl/cluster-builder:$SOURCE_BRANCH
+          echo ${GITHUB_REF##*/}
+          docker build . -t aldmbmtl/cluster-builder:${GITHUB_REF##*/}
+          docker push aldmbmtl/cluster-builder:${GITHUB_REF##*/}
