@@ -8,8 +8,7 @@ on:
 jobs:
   publish:
     name: Push Docker image to Docker Hub
-    runs-on:
-      - X64
+    runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
@@ -25,5 +24,6 @@ jobs:
         env:
           SOURCE_BRANCH: ${{ steps.branch_name.outputs.SOURCE_BRANCH }}
         run: |
+          echo "$SOURCE_BRANCH"
           docker build . -t aldmbmtl/cluster-builder:$SOURCE_BRANCH
           docker push aldmbmtl/cluster-builder:$SOURCE_BRANCH
