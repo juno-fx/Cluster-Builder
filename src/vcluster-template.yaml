@@ -1,0 +1,18 @@
+isolation:
+  enabled: true
+
+  resourceQuota:
+    enabled: false
+
+syncer:
+  extraArgs:
+    - --tls-san=NAME.NAME.svc.cluster.local
+
+sync:
+  persistentvolumes:
+    enabled: true
+  ingresses:
+    enabled: true
+  nodes:
+    enabled: true
+    syncAllNodes: true
