@@ -8,10 +8,9 @@ syncer:
   extraArgs:
     - --tls-san=NAME.NAME.svc.cluster.local
 
-storage:
-  persistence: false
-
 sync:
+  storage:
+    persistence: false
   persistentvolumes:
     enabled: true
   ingresses:
