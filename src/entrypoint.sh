@@ -3,6 +3,7 @@
 if [ "$ACTION" = "install" ]; then
   echo "Installing vcluster"
   sed -i "s/NAME/$NAME/g" vcluster-template.yaml
+  cat vcluster-template.yaml
   vcluster create "$NAME" -n "$NAME" -f vcluster-template.yaml --connect=false --upgrade
   vcluster connect "$NAME" -n "$NAME" --update-current=false --server=https://"$NAME"."$NAME".svc.cluster.local
   argocd login argocd-server.argocd.svc.cluster.local --core
