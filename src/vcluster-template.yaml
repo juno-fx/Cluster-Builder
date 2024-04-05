@@ -9,16 +9,8 @@ syncer:
     - --tls-san=NAME.NAME.svc.cluster.local
 
 sync:
-  storageclasses:
-    enabled: true
   storage:
     persistence: false
-  persistentvolumes:
-    enabled: true
-  persistentvolumeclaims:
-    enabled: true
-  ingressclasses:
-    enabled: true
   ingresses:
     enabled: true
   nodes:
