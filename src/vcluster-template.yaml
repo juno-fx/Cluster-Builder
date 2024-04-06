@@ -9,6 +9,8 @@ syncer:
     - --tls-san=NAME.NAME.svc.cluster.local
 
 sync:
+  persistentvolumes:
+    enabled: true
   storage:
     persistence: false
   ingresses:
