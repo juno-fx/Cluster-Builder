@@ -13,8 +13,6 @@ sync:
     persistence: false
   ingresses:
     enabled: true
-  persistentvolumes:
-    enabled: true
   nodes:
     enabled: true
     syncAllNodes: true
