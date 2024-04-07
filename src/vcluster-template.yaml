@@ -11,6 +11,8 @@ syncer:
 sync:
   persistentvolumes:
     enabled: true
+  persistentvolumeclaims:
+    enabled: true
   storage:
     persistence: false
   ingresses:
